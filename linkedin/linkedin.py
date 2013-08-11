@@ -160,7 +160,9 @@ class LinkedInApplication(object):
         else:
             headers.update({'x-li-format': 'json', 'Content-Type': 'application/json'})
 
-        params = {} 
+        if params is None:
+            params = {} 
+        
         kw = dict(data=data, params=params,
                   headers=headers, timeout=timeout)
 
